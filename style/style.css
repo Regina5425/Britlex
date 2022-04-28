@@ -61,6 +61,25 @@ img {
 	margin: 0 auto;
 }
 
+.btn {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 30px;
+	background-color: #263238;
+	color: #fff;
+}
+
+.title {
+	font-weight: 600;
+	font-size: 48px;
+	line-height: 80px;
+	color: #000;
+}
+
+.title-center {
+	text-align: center;
+}
+
 /*======header======*/
 .header {
 	padding-top: 55px;
@@ -120,4 +139,60 @@ img {
 	border: 2px solid transparent;
 	background-color: #939393;
 	color: #fff;
+}
+
+/*====main========*/
+
+/*======hero=====*/
+.hero {
+	padding-top: 47px;
+	padding-bottom: 80px;
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	align-items: center;
+	column-gap: 50px;
+}
+
+.hero-content {
+	max-width: 632px;
+}
+
+.hero-content__title {
+	margin-bottom: 40px;
+	font-weight: 600;
+	font-size: 64px;
+	line-height: 80px;
+	color: #000;
+}
+
+.hero-content__descr {
+	margin-bottom: 60px;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 36px;
+	color: #8F95A5;
+}
+
+.hero-content__link {
+	padding: 32px 117px;
+	display: inline-block;
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 54px;
+	border-radius: 15px;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.hero-content__link:hover {
+	background-color: #939393;
+}
+
+/*======skills==========*/
+.skills {
+	padding-top: 67px;
+	padding-bottom: 140px;
+}
+
+.skills__title {
+	margin-bottom: 92px;
 }
