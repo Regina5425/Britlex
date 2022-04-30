@@ -406,3 +406,55 @@ a {
 	line-height: 45px;
 	color: #263238;
 }
+
+/*========contact===========*/
+.contact {
+	padding-top: 100px;
+	padding-bottom: 130px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 110px;
+}
+
+.contact__title {
+	margin-bottom: 50px;
+}
+
+.conact__descr {
+	margin-bottom: 50px;
+}
+
+.contact__form {
+	display: flex;
+	max-width: 726px;
+}
+
+.contact__form-text {
+	margin-right: 12px;
+	padding: 27px 33px;
+	display: inline-block;
+	width: 100%;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	border: 1px solid #8f95a5;
+	border-radius: 10px;
+	color: #8f95a5;
+}
+
+.contact__btn {
+	padding: 25px 80px;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 30px;
+	background-color: #263238;
+	border: none;
+	border-radius: 10px;
+	color: #fff;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.contact__btn:hover {
+	background-color: #939393;
+}
