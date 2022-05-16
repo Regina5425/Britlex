@@ -495,15 +495,12 @@ img {
 @media (max-width: 768px) {
 	.skills-container {
 		display: flex;
-		/* flex-direction: column; */
 		gap: 30px;
 		flex-wrap: wrap;
-		max-width: 240px;
 	}
 
 	.skills__content {
 		padding: 15px;
-		/* justify-self: center; */
 	}
 
 	.skills__img--write {
@@ -518,6 +515,7 @@ img {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+		width: 100%;
 	}
 
 	.skills__img--listen {
@@ -526,6 +524,7 @@ img {
 
 	.skills__listen {
 		order: 2;
+		max-width: none;
 	}
 }
 
