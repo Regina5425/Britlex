@@ -41,6 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	const modalBtn = document.querySelector('.header__btn'),
 		modal = document.querySelector('.modal');
 
+	const message = {
+		successModal: 'Thank you! We will contact you soon!',
+		successSub: 'Thanks for subscribing!',
+		failure: 'Something went wrong... Try later'
+	};
+
 	modalBtn.addEventListener('click', openModal);
 	modal.addEventListener('click', (e) => {
 		if (e.target === modal || e.target.getAttribute('data-close') == '') {
@@ -58,6 +64,30 @@ document.addEventListener('DOMContentLoaded', () => {
 		modal.classList.add('hide');
 		modal.classList.remove('show');
 		document.body.style.overflow = '';
+	}
+
+	function showThanksModal(message) {
+		const prevModalDialog = document.querySelector('.modal__dialog');
+
+		prevModalDialog.classList.add('hide');
+		openModal();
+
+		const thanksModal = document.createElement('div');
+		thanksModal.classList.add('modal__dialog');
+		thanksModal.innerHTML = `
+			<div class="modal__content">
+				<div class="modal__close" data-close>&times;</div>
+				<div class="modal__title">${message}</div>
+			</div>
+			`;
+
+		modal.append(thanksModal);
+		setTimeout(() => {
+			thanksModal.remove();
+			prevModalDialog.classList.add('show');
+			prevModalDialog.classList.remove('hide');
+			closeModal();
+		}, 4000);
 	}
 
 	// forms
@@ -104,11 +134,18 @@ document.addEventListener('DOMContentLoaded', () => {
 					body: JSON.stringify(userMail)
 				})
 				.then(response => response.json())
-				.then(data => console.log(data))
-				.catch(error => console.log(error));
+				.then(data => {
+					console.log(data);
+					showThanksModal(message.successSub);
+				})
+				.catch(error => {
+					console.log(error);
+					showThanksModal(message.failure);
+				})
+				.finally(() => {
+					contactForm.reset();
+				});
 		}
-
-		inputEmail.value = '';
 	});
 
 	//modal form
@@ -138,12 +175,17 @@ document.addEventListener('DOMContentLoaded', () => {
 					body: JSON.stringify(modalArr)
 				})
 				.then(response => response.json())
-				.then(modalData => console.log(modalData))
-				.catch(modalErr => console.log(modalErr));
+				.then(modalData => {
+					console.log(modalData);
+					showThanksModal(message.successModal);
+				})
+				.catch(modalErr => {
+					console.log(modalErr);
+					showThanksModal(message.failure);
+				})
+				.finally(() => {
+					modalForm.reset();
+				});
 		}
-
-		inputsModal.forEach(input => {
-			input.value = '';
-		});
 	});
 });
