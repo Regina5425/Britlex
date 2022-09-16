@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style/normalize.css" />
     <link rel="stylesheet" href="style/style.css" />
   </head>
-  <body>
+  <body id="home">
     <div class="site-container">
       <header class="header container">
         <div class="header__logo">
@@ -20,19 +20,19 @@
 							<a href="#" class="header__link">Home</a>
 						</li>
 						<li class="header__item">
-							<a href="#" class="header__link">Skills</a>
+							<a href="#skills" class="header__link">Skills</a>
 						</li>
 						<li class="header__item">
-							<a href="#" class="header__link">About Us</a>
+							<a href="#about" class="header__link">About Us</a>
 						</li>
 						<li class="header__item">
-							<a href="#" class="header__link">Pricing</a>
+							<a href="#price" class="header__link">Pricing</a>
 						</li>
 						<li class="header__item">
-							<a href="#" class="header__link">Contacts</a>
+							<a href="#contact" class="header__link">Contacts</a>
 						</li>
 					</ul>
-					<a class="header__btn" href="#">Let&apos;s Talk</a>
+					<button class="btn-reset header__btn">Let&apos;s Talk</button>
 				</nav>
         <!-- burger -->
         <button class="burger" data-burger aria-label="Открыть меню" aria-expanded="false">
@@ -60,7 +60,7 @@
         </section>
 
         <section class="skills">
-          <h2 class="skills__title title title-center">Skills</h2>
+          <h2 id="skills" class="skills__title title title-center">Skills</h2>
           <div class="skills-container">
             <div class="skills__content skills__content--1">
               <img
@@ -132,7 +132,7 @@
 
         <section class="about">
           <div class="about__left">
-            <h2 class="title about__title">About Us</h2>
+            <h2 id="about" class="title about__title">About Us</h2>
             <p class="about__descr descr">
               The model offers a&nbsp;framework for discussing problems related
               to&nbsp;the user&rsquo;s experience, as&nbsp;well as&nbsp;possible
@@ -163,7 +163,7 @@
         </section>
 
         <section class="pricing">
-          <h2 class="pricing__title title title-center">Pricing</h2>
+          <h2 id="price" class="pricing__title title title-center">Pricing</h2>
           <div class="pricing__container">
             <div class="pricing__block">
               <img
@@ -205,17 +205,17 @@
         <section class="contact">
           <img src="img/contact.png" alt="contact" />
           <div class="contact__content">
-            <h2 class="contact__title title">Contact Us</h2>
-            <p class="conact__descr descr">
+            <h2 id="contact" class="contact__title title">Contact Us</h2>
+            <p class="contact__descr descr">
               Discover your current English level by&nbsp;taking our free online
               English test.Sign up&nbsp;to&nbsp;our newsletter for learning tips
               and free resources
             </p>
-            <form action="#" class="contact__form">
+            <form class="contact__form" novalidate>
               <input
                 type="email"
                 class="contact__form-text"
-                placeholder="Enter Your E-mail"
+                placeholder="Enter your E-mail"
               />
               <button type="submit" class="contact__btn">Subscribe</button>
             </form>
@@ -225,7 +225,7 @@
       <footer class="footer">
         <div class="footer__container container">
           <div class="header__logo footer__logo">
-            <a href="#">Brit<span>lex</span></a>
+            <a href="#home">Brit<span>lex</span></a>
           </div>
           <div class="footer__copyright">
             <a href="#" class="footer__copy">Terms and Conditions</a>
@@ -234,6 +234,34 @@
           </div>
         </div>
       </footer>
+
+			<div class="modal hide">
+				<div class="modal__dialog">
+					<div class="modal__content">
+						<form action="#" class="modal-form" novalidate>
+							<div data-close class="modal__close">&times;</div>
+							<div class="modal__title">
+								Let's talk! Write us, we'll answer you!
+							</div>
+							<input
+								required
+								placeholder="Your name"
+								name="name"
+								type="text"
+								class="modal__input"
+							/>
+							<input
+								required
+								placeholder="Your e-mail"
+								name="phone"
+								type="email"
+								class="modal__input"
+							/>
+							<button class="btn modal__btn">Send</button>
+						</form>
+					</div>
+				</div>
+			</div>
     </div>
 		<script src="js/script.js"></script>
   </body>
