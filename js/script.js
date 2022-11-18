@@ -1,4 +1,3 @@
-//burger-menu
 const burger = document.querySelector('[data-burger]');
 const headerNav = document.querySelector('[data-nav]');
 const navItems = headerNav.querySelectorAll('a');
